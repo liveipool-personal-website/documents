@@ -10,7 +10,8 @@
  - 李为 tel: 18826072459, email: 123653079@qq.com, github:[https://github.com/Liveipool](https://github.com/Liveipool)            
 
 ## 文档               
- - [需求文档](./docs/requirements-documentation.md)        
+ - [需求文档](./docs/requirements-documentation.md) 
+ - [API](./docs/api.md)        
 
 ## 项目计划       
 
