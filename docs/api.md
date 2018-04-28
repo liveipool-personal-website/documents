@@ -8,6 +8,10 @@
     - [获取主页大背景图](#获取主页大背景图)
     - [获取主页小背景图](#获取主页小背景图)
     - [获取主页提示语](#获取主页提示语)
+- [博客页面](#博客页面)
+    - [获取文章类别列表](#获取文章类别列表)
+    - [获取文章信息列表](#获取文章信息列表)
+    - [获取文章内容](#获取文章内容)
 
 <!-- /MarkdownTOC -->
 
@@ -97,3 +101,113 @@ Response Example:
 }
 ```
 
+<a name="博客页面"></a>
+## 博客页面
+
+<a name="获取文章类别列表"></a>
+### 获取文章类别列表
+
+Request URI:
+
+```
+GET /blog/categorys
+```
+
+Response Properties:
+
+| Property | Description | Type |
+|----------|-------------|------|
+|categorys|文章类别列表|string array|
+
+Response Example:
+
+```json
+{
+    "categorys": ["前端", "后端", "英语", "数学"]
+}
+```
+
+<a name="获取文章信息列表"></a>
+### 获取文章信息列表
+
+Request URI:
+
+```
+GET /blog/blogInfos/:start/:count
+```
+
+Request Properties:
+
+| Property | Description | Type |
+|----------|-------------|------|
+|start|从第几篇对应类别的文章开始|number|
+|count|一共要请求多少篇文章的信息|number|
+
+Response Properties:
+
+| Property | Description | Type |
+|----------|-------------|------|
+|blogInfos|文章信息列表|object array|
+|blogInfos.blogId|文章的id|number|
+|blogInfos.title|文章的标题|string|
+|blogInfos.uploadDate|文章的上传日期|string|
+|blogInfos.category|文章的类别|string|
+
+Response Example:
+
+```json
+{
+    "blogInfos": [
+        {
+            "blogId": 0,
+            "title": "如何评价中山大学",
+            "uploadDate": "2018-03-12",
+            "category": "前端",
+        },
+        {
+            "blogId": 1,
+            "title": "星巴克焦糖咖啡星冰乐",
+            "uploadDate": "2018-02-14",
+            "category": "后端"
+        }
+    ]
+}
+```
+
+<a name="获取文章内容"></a>
+### 获取文章内容
+
+Request URI:
+
+```
+GET /blog/:blogId
+```
+
+Request Properties:
+
+| Property | Description | Type |
+|----------|-------------|------|
+|blogId|文章的id|number|
+
+Response Properties:
+
+| Property | Description | Type |
+|----------|-------------|------|
+|blog|文章内容|object|
+|blog.blogId|文章的id|number|
+|blog.title|文章的标题|string|
+|blog.uploadDate|文章的上传日期|string|
+|blog.content|文章的内容|string|
+
+Response Example:
+
+```json
+{
+    "blog": {
+        "blogId": 0,
+        "title": "如何评价中山大学",
+        "uploadDate": "2018-03-12",
+        "content": "..."
+    }
+}
+```
