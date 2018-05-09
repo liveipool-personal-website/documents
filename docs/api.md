@@ -12,6 +12,8 @@
     - [获取文章类别列表](#获取文章类别列表)
     - [获取文章信息列表](#获取文章信息列表)
     - [获取文章内容](#获取文章内容)
+- [关于作者页面](#关于作者页面)
+    - [获取作者个人信息](#获取作者个人信息)
 
 <!-- /MarkdownTOC -->
 
@@ -208,6 +210,39 @@ Response Example:
         "title": "如何评价中山大学",
         "uploadDate": "2018-03-12",
         "content": "..."
+    }
+}
+```
+
+<a name="关于作者页面"></a>
+## 关于作者页面
+
+<a name="获取文章类别列表"></a>
+### 获取文章类别列表
+
+Request URI:
+
+```
+GET /about/personalInfo
+```
+
+Response Properties:
+
+| Property | Description | Type |
+|----------|-------------|------|
+|personalInfo|个人信息|object|
+|personalInfo.wechat|微信号|string|
+|personalInfo.email|邮箱|string|
+|personalInfo.github|github地址|string|
+
+Response Example:
+
+```json
+{
+    "personalInfo": {
+        "wechat": "liveipool",
+        "email": "123456789@qq.com",
+        "github": "https://github.com/Liveipool"
     }
 }
 ```
