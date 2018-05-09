@@ -217,8 +217,8 @@ Response Example:
 <a name="关于作者页面"></a>
 ## 关于作者页面
 
-<a name="获取文章类别列表"></a>
-### 获取文章类别列表
+<a name="获取作者个人信息"></a>
+### 获取作者个人信息
 
 Request URI:
 
